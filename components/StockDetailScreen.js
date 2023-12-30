@@ -1,14 +1,17 @@
 // StockDetailScreen.js
 
 import React, { useEffect, useState } from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
 import axios from 'axios';
 import { LineChart } from 'react-native-chart-kit';
 import { AreaChart, Grid } from 'react-native-svg-charts';
+import orientation from '../utility/orientation';
+
 
 const StockDetailScreen = ({ route }) => {
   const { symbol } = route.params;
   const [stockData, setStockData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchStockData();
@@ -24,6 +27,8 @@ const StockDetailScreen = ({ route }) => {
     } catch (error) {
       console.error('Error fetching stock data:', error);
       // Handle error appropriately
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -157,9 +162,15 @@ const StockDetailScreen = ({ route }) => {
 
   return (
     <ScrollView style={styles.container}>
+      {loading ? (
+        <ActivityIndicator size="large" color="#3498db" />
+      ) : (
+      <>
       {renderChart()}
       {renderImportantRecords()}
       {renderRemainingRecords()}
+      </>
+      )}
     </ScrollView>
   );
 };
