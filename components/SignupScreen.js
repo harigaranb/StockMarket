@@ -15,7 +15,7 @@ import {
   setSignupPassword,
   setSignupErrorMessage,
   saveUserData
-} from "./authActions";
+} from "../redux/authActions";
 
 const SignupScreen = ({ navigation }) => {
   const dispatch = useDispatch();

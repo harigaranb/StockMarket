@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-import { setErrorMessage } from './authActions';
+import { setErrorMessage } from '../redux/authActions';
 
 const DashboardScreen = ({ navigation }) => {
   const dispatch = useDispatch();

@@ -13,7 +13,7 @@ import {
   setCaptcha,
   setInputCaptcha,
   setErrorMessage,
-} from "./authActions";
+} from "../redux/authActions";
 
 const LoginScreen = ({ navigation }) => {
   const dispatch = useDispatch();
