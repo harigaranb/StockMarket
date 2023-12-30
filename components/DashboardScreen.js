@@ -49,7 +49,7 @@ const DashboardScreen = ({ navigation }) => {
 
   const renderStockCard = ({ item }) => (
     <TouchableOpacity style={styles.card} onPress={() => handleStockPress(item.symbol)}>
-      <Text style={styles.stockName}>{item.companyName}</Text>
+      <Text style={styles.stockName}>{item.companyName} {item.symbol}</Text>
       <Text style={styles.latestPrice}>{`Latest Price: $${item.latestPrice}`}</Text>
       <Text style={styles.changePrice}>{`Change: ${item.change} (${item.changePercent}%)`}</Text>
     </TouchableOpacity>

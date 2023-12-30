@@ -96,7 +96,7 @@ const StockDetailScreen = ({ route }) => {
 
   const renderImportantRecords = () => {
     if (stockData && stockData.quote) {
-      const { companyName, latestPrice, change, changePercent } = stockData.quote;
+      const { companyName, symbol, latestPrice, change, changePercent } = stockData.quote;
 
       return (
         <View style={styles.grid}>
@@ -104,6 +104,10 @@ const StockDetailScreen = ({ route }) => {
           <View style={styles.gridRow}>
             <Text style={styles.gridLabel}>Company Name:</Text>
             <Text style={styles.gridValue}>{companyName}</Text>
+          </View>
+          <View style={styles.gridRow}>
+            <Text style={styles.gridLabel}>Symbol:</Text>
+            <Text style={styles.gridValue}>{symbol}</Text>
           </View>
           <View style={styles.gridRow}>
             <Text style={styles.gridLabel}>Latest Price:</Text>
