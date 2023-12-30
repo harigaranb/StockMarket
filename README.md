@@ -17,8 +17,8 @@ This project involves the development of a React Native Expo app with features s
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/react-native-expo-chat.git
-   cd react-native-expo-chat
+   git clone https://github.com/harigaranb/StockMarket.git
+   cd StockMarket
     ```
 2. **Install Dependencies**
 
